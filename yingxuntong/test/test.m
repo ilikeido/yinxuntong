@@ -30,16 +30,17 @@
    
 }
 
+#pragma mark - SystemAPI
+
 - (void)testGetCurrentDateTime {
     // This is an example of a functional test case.
 //    XCTAssert(YES, @"Pass");
     runLoop = [NSRunLoop currentRunLoop];
     GetCurrentDateTimeRequest *request = [[GetCurrentDateTimeRequest alloc]init];
-    [SystemAPI request:request responseClass:[GetCurrentDateTimeResponse class] completionBlockWithSuccess:^(NDBaseAPIResponse *response) {
-        GetCurrentDateTimeResponse *response1 = (GetCurrentDateTimeResponse *)response;
-        NSLog(@"%@",response1.currentDateTime);
+    [SystemAPI getCurrentDateTimeByRequest:request completionBlockWithSuccess:^(GetCurrentDateTimeResponse *response) {
+        XCTAssertNotNil(response.currentDateTime);
     } Fail:^(NSString *returnCode, NSString *failDescript) {
-        NSLog(@"%@",failDescript);
+        XCTFail(@"%@",failDescript);
     }];
      [runLoop runUntilDate:[NSDate dateWithTimeIntervalSinceNow:20]];
 }
