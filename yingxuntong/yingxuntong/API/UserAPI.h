@@ -40,23 +40,9 @@
 @end
 
 /**
- *  用户登录系统
- */
-@interface PosLoginRequest : NDBaseAPIRequest
-
-@property(nonatomic,strong) NSString *phoneNum;
-@property(nonatomic,strong) NSString *password;
-@property(nonatomic,strong) NSString *deviceNo;
-@property(nonatomic,strong) NSString *deviceVersion;
-@property(nonatomic,assign) int deviceType;
-
-@end
-
-
-/**
  *  用户登录系统请求(系统-v2)
  */
-@interface PosLogin2Request : NDBaseAPIRequest
+@interface PosLoginRequest : NDBaseAPIRequest
 
 @property(nonatomic,strong) NSString *phoneNum;
 @property(nonatomic,strong) NSString *password;
@@ -69,7 +55,7 @@
 /**
  *  用户登录返回(系统-v2)
  */
-@interface PosLogin2Response : NDBaseAPIRequest
+@interface PosLoginResponse : NDBaseAPIRequest
 
 @property(nonatomic,strong) TsUser *user;//用户信息
 
@@ -124,5 +110,36 @@
 
 
 @interface UserAPI : NDBaseAPI
+
+/**
+ *  用户登录
+ *
+ *  @param request 请求对象
+ *  @param sucess 成功返回的Block
+ *  @param fail 失败返回的Block
+ *
+ */
++(void)posLoginByRequest:(PosLoginRequest *)request completionBlockWithSuccess:(void(^)(PosLoginResponse *response))sucess  Fail:(void(^)(NSString * returnCode,NSString *failDescript))fail;
+
+/**
+ *  修改密码
+ *
+ *  @param request 请求对象
+ *  @param sucess 成功返回的Block
+ *  @param fail 失败返回的Block
+ *
+ */
++(void)restPwdByRequest:(RestPwdRequest *)request completionBlockWithSuccess:(void(^)(RestPwdResponse *response))sucess  Fail:(void(^)(NSString * returnCode,NSString *failDescript))fail;
+
+
+/**
+ *  修改密码
+ *
+ *  @param request 请求对象
+ *  @param sucess 成功返回的Block
+ *  @param fail 失败返回的Block
+ *
+ */
++(void)memberListByRequest:(MemberListRequest *)request completionBlockWithSuccess:(void(^)(MemberListResponse *response))sucess  Fail:(void(^)(NSString * returnCode,NSString *failDescript))fail;
 
 @end

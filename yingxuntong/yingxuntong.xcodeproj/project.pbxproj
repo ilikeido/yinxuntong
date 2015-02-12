@@ -45,6 +45,26 @@
 		6D0780B01A8B3B750079FD13 /* UIImage+External.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0780981A8B3B750079FD13 /* UIImage+External.m */; };
 		6D0780B81A8B44E10079FD13 /* LK_NSDictionary2Object.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0780B71A8B44E10079FD13 /* LK_NSDictionary2Object.m */; };
 		6D0780BB1A8B45000079FD13 /* NDBaseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0780BA1A8B45000079FD13 /* NDBaseAPI.m */; };
+		6D7A36BC1A8C52A600D19E37 /* CompanyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7A36BB1A8C52A600D19E37 /* CompanyAPI.m */; };
+		6D7A36BD1A8C52A600D19E37 /* CompanyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7A36BB1A8C52A600D19E37 /* CompanyAPI.m */; };
+		6D7A36BE1A8C52AC00D19E37 /* DBAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB18D6F1A8BB3D9004DFAEB /* DBAPI.m */; };
+		6D7A36BF1A8C52AE00D19E37 /* UserAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB18D691A8BAAB3004DFAEB /* UserAPI.m */; };
+		6D7A36C01A8C52C300D19E37 /* Member.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4B11D31A8B9B7A0048E67C /* Member.m */; };
+		6D7A36C11A8C52C500D19E37 /* SqlitDB.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4B11D61A8B9C440048E67C /* SqlitDB.m */; };
+		6D7A36C21A8C52C800D19E37 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4B11D91A8B9CD90048E67C /* Company.m */; };
+		6D7A36C31A8C52CA00D19E37 /* CompanyMcht.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4B11DC1A8B9D9A0048E67C /* CompanyMcht.m */; };
+		6D7A36C41A8C52CD00D19E37 /* AgreementOperateLog.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4B11DF1A8B9DFD0048E67C /* AgreementOperateLog.m */; };
+		6D7A36C51A8C52D000D19E37 /* CompanyMchtTerminal.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4B11E21A8B9E920048E67C /* CompanyMchtTerminal.m */; };
+		6D7A36C61A8C52D200D19E37 /* CompanyTerminalInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4B11E51A8B9EE30048E67C /* CompanyTerminalInfo.m */; };
+		6D7A36C71A8C52D500D19E37 /* Step.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4B11E81A8BA01C0048E67C /* Step.m */; };
+		6D7A36C81A8C52D800D19E37 /* TsUser.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4B11EB1A8BA0980048E67C /* TsUser.m */; };
+		6D7A36C91A8C52DD00D19E37 /* CompanyFile.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4B11EE1A8BA1360048E67C /* CompanyFile.m */; };
+		6D7A36CA1A8C52E000D19E37 /* CredentialType.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4B11F11A8BA1A30048E67C /* CredentialType.m */; };
+		6D7A36CB1A8C52E200D19E37 /* SysUser.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4B11F41A8BA2750048E67C /* SysUser.m */; };
+		6D7A36CC1A8C52E600D19E37 /* CompanyFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4B11F71A8BA2E70048E67C /* CompanyFeedback.m */; };
+		6D7A36CD1A8C52E800D19E37 /* Version.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB18D631A8BA62D004DFAEB /* Version.m */; };
+		6D7A36CE1A8C52EC00D19E37 /* DataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB18D661A8BA762004DFAEB /* DataItem.m */; };
+		6D7A36CF1A8C52EE00D19E37 /* EnterpriseConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB18D6C1A8BAC1E004DFAEB /* EnterpriseConfig.m */; };
 		6DEB56E21A8B5E550076E66E /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEB56E11A8B5E550076E66E /* test.m */; };
 		6DEB56E81A8B5E990076E66E /* ServerConfig.h in Sources */ = {isa = PBXBuildFile; fileRef = 6D0780691A8B3B740079FD13 /* ServerConfig.h */; };
 		6DEB56E91A8B5E990076E66E /* ShareValue.h in Sources */ = {isa = PBXBuildFile; fileRef = 6D07806A1A8B3B740079FD13 /* ShareValue.h */; };
@@ -186,6 +206,8 @@
 		6D0780B71A8B44E10079FD13 /* LK_NSDictionary2Object.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LK_NSDictionary2Object.m; sourceTree = "<group>"; };
 		6D0780B91A8B45000079FD13 /* NDBaseAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDBaseAPI.h; sourceTree = "<group>"; };
 		6D0780BA1A8B45000079FD13 /* NDBaseAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDBaseAPI.m; sourceTree = "<group>"; };
+		6D7A36BA1A8C52A600D19E37 /* CompanyAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyAPI.h; sourceTree = "<group>"; };
+		6D7A36BB1A8C52A600D19E37 /* CompanyAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyAPI.m; sourceTree = "<group>"; };
 		6DEB56DD1A8B5E550076E66E /* test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = test.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DEB56E01A8B5E550076E66E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DEB56E11A8B5E550076E66E /* test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
@@ -462,6 +484,8 @@
 				DFB18D691A8BAAB3004DFAEB /* UserAPI.m */,
 				DFB18D6E1A8BB3D9004DFAEB /* DBAPI.h */,
 				DFB18D6F1A8BB3D9004DFAEB /* DBAPI.m */,
+				6D7A36BA1A8C52A600D19E37 /* CompanyAPI.h */,
+				6D7A36BB1A8C52A600D19E37 /* CompanyAPI.m */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -641,6 +665,7 @@
 				6D0780661A8B3B300079FD13 /* UIImageView+WebCache.m in Sources */,
 				6D0780571A8B3B300079FD13 /* AFURLConnectionOperation.m in Sources */,
 				6D0780B01A8B3B750079FD13 /* UIImage+External.m in Sources */,
+				6D7A36BC1A8C52A600D19E37 /* CompanyAPI.m in Sources */,
 				6D0780621A8B3B300079FD13 /* UIButton+WebCache.m in Sources */,
 				6D07805F1A8B3B300079FD13 /* SDWebImageDownloaderOperation.m in Sources */,
 				DF4B11E91A8BA01C0048E67C /* Step.m in Sources */,
@@ -688,16 +713,26 @@
 			files = (
 				6DEB56EF1A8B5EA60076E66E /* AFHTTPClient.h in Sources */,
 				6DEB56F01A8B5EA60076E66E /* AFHTTPClient.m in Sources */,
+				6D7A36BE1A8C52AC00D19E37 /* DBAPI.m in Sources */,
 				6DEB56F11A8B5EA60076E66E /* AFHTTPRequestOperation.h in Sources */,
+				6D7A36CA1A8C52E000D19E37 /* CredentialType.m in Sources */,
+				6D7A36C11A8C52C500D19E37 /* SqlitDB.m in Sources */,
+				6D7A36C51A8C52D000D19E37 /* CompanyMchtTerminal.m in Sources */,
+				6D7A36C31A8C52CA00D19E37 /* CompanyMcht.m in Sources */,
+				6D7A36BD1A8C52A600D19E37 /* CompanyAPI.m in Sources */,
+				6D7A36CD1A8C52E800D19E37 /* Version.m in Sources */,
 				6DEB56F21A8B5EA60076E66E /* AFHTTPRequestOperation.m in Sources */,
+				6D7A36C21A8C52C800D19E37 /* Company.m in Sources */,
 				6DEB56F31A8B5EA60076E66E /* AFImageRequestOperation.h in Sources */,
 				6DEB56F41A8B5EA60076E66E /* AFImageRequestOperation.m in Sources */,
 				6DEB56F51A8B5EA60076E66E /* AFJSONRequestOperation.h in Sources */,
 				6DEB56F61A8B5EA60076E66E /* AFJSONRequestOperation.m in Sources */,
 				6DEB56F71A8B5EA60076E66E /* AFNetworkActivityIndicatorManager.h in Sources */,
+				6D7A36C71A8C52D500D19E37 /* Step.m in Sources */,
 				6DEB56F81A8B5EA60076E66E /* AFNetworkActivityIndicatorManager.m in Sources */,
 				6DEB56F91A8B5EA60076E66E /* AFNetworking.h in Sources */,
 				6DEB56FA1A8B5EA60076E66E /* AFPropertyListRequestOperation.h in Sources */,
+				6D7A36C81A8C52D800D19E37 /* TsUser.m in Sources */,
 				6DEB56FB1A8B5EA60076E66E /* AFPropertyListRequestOperation.m in Sources */,
 				DF4B11D11A8B990C0048E67C /* FCUUID.m in Sources */,
 				6DEB56FC1A8B5EA60076E66E /* AFURLConnectionOperation.h in Sources */,
@@ -705,17 +740,26 @@
 				6DEB56FE1A8B5EA60076E66E /* AFXMLRequestOperation.h in Sources */,
 				6DEB56FF1A8B5EA60076E66E /* AFXMLRequestOperation.m in Sources */,
 				6DEB57071A8B5F350076E66E /* SystemAPI.m in Sources */,
+				6D7A36CC1A8C52E600D19E37 /* CompanyFeedback.m in Sources */,
+				6D7A36C41A8C52CD00D19E37 /* AgreementOperateLog.m in Sources */,
 				6DEB57001A8B5EA60076E66E /* UIImageView+AFNetworking.h in Sources */,
 				6DEB57011A8B5EA60076E66E /* UIImageView+AFNetworking.m in Sources */,
+				6D7A36CF1A8C52EE00D19E37 /* EnterpriseConfig.m in Sources */,
 				6DEB56E81A8B5E990076E66E /* ServerConfig.h in Sources */,
 				6DEB56E91A8B5E990076E66E /* ShareValue.h in Sources */,
 				6DEB56EA1A8B5E990076E66E /* ShareValue.mm in Sources */,
 				6DEB56EB1A8B5E990076E66E /* NDBaseAPI.h in Sources */,
 				6DEB56EC1A8B5E990076E66E /* NDBaseAPI.m in Sources */,
+				6D7A36BF1A8C52AE00D19E37 /* UserAPI.m in Sources */,
+				6D7A36C01A8C52C300D19E37 /* Member.m in Sources */,
 				6DEB56ED1A8B5E990076E66E /* LK_NSDictionary2Object.h in Sources */,
 				6DEB56EE1A8B5E990076E66E /* LK_NSDictionary2Object.m in Sources */,
 				6DEB56E21A8B5E550076E66E /* test.m in Sources */,
 				DF4B11D01A8B99090048E67C /* UICKeyChainStore.m in Sources */,
+				6D7A36C61A8C52D200D19E37 /* CompanyTerminalInfo.m in Sources */,
+				6D7A36C91A8C52DD00D19E37 /* CompanyFile.m in Sources */,
+				6D7A36CE1A8C52EC00D19E37 /* DataItem.m in Sources */,
+				6D7A36CB1A8C52E200D19E37 /* SysUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
