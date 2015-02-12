@@ -6,6 +6,8 @@
 //  Copyright (c) 2015年 ilikeido. All rights reserved.
 //
 #import "UserAPI.h"
+#import "FCUUID.h"
+#import "ShareValue.h"
 
 @implementation LoginRequest
 
@@ -19,10 +21,28 @@
 
 @end
 
+@interface PosLoginRequest()
+
+@property(nonatomic,strong) NSString *deviceNo;//设备号(IMEI号)
+@property(nonatomic,strong) NSString *deviceVersion;//设备版本号
+@property(nonatomic,assign) int deviceType;//设备类型(1:android,2:ios)
+
+@end
+
 @implementation PosLoginRequest
 
 -(NSString *)method{
     return @"/poslogin2";
+}
+
+-(id)init{
+    self = [super init];
+    if (self) {
+        self.deviceNo = [FCUUID uuidForDevice];
+        self.deviceVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+        self.deviceType = 2;
+    }
+    return self;
 }
 
 @end
@@ -71,9 +91,19 @@
  *  @param fail 失败返回的Block
  *
  */
-+(void)posLoginRequestByRequest:(PosLoginRequest *)request completionBlockWithSuccess:(void(^)(PosLoginResponse *response))sucess  Fail:(void(^)(NSString * returnCode,NSString *failDescript))fail{
++(void)posLoginByRequest:(PosLoginRequest *)request completionBlockWithSuccess:(void(^)(PosLoginResponse *response))sucess  Fail:(void(^)(NSString * returnCode,NSString *failDescript))fail;{
     [self request:request responseClass:[PosLoginResponse class] completionBlockWithSuccess:^(NDBaseAPIResponse *response) {
-        sucess((PosLoginResponse *)response);
+        PosLoginResponse *tResponse = (PosLoginResponse *)response;
+        [ShareValue standardShareValue].user = tResponse.user;
+        [ShareValue standardShareValue].rememberPwd = YES;
+        if ([ShareValue standardShareValue].rememberPwd) {
+            [ShareValue standardShareValue].save_userName = request.phoneNum;
+            [ShareValue standardShareValue].save_pwd = request.password;
+        }else{
+            [ShareValue standardShareValue].save_userName = nil;
+            [ShareValue standardShareValue].save_pwd = nil;
+        }
+        sucess(tResponse);
     } Fail:^(NSString *returnCode, NSString *failDescript) {
         fail(returnCode,failDescript);
     }];

@@ -44,18 +44,16 @@
  */
 @interface PosLoginRequest : NDBaseAPIRequest
 
-@property(nonatomic,strong) NSString *phoneNum;
-@property(nonatomic,strong) NSString *password;
-@property(nonatomic,strong) NSString *deviceNo;
-@property(nonatomic,strong) NSString *deviceVersion;
-@property(nonatomic,assign) int deviceType;
+@property(nonatomic,strong) NSString *phoneNum;//用户名
+@property(nonatomic,strong) NSString *password;//密码
+
 
 @end
 
 /**
  *  用户登录返回(系统-v2)
  */
-@interface PosLoginResponse : NDBaseAPIRequest
+@interface PosLoginResponse : NDBaseAPIResponse
 
 @property(nonatomic,strong) TsUser *user;//用户信息
 

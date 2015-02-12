@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "TsUser.h"
+
 #define SYSTEM_VERSION 1.0
 
 #define SYSTEM_DEVERLOPER 0
@@ -19,5 +21,13 @@
 @interface ShareValue : NSObject
 
 +(ShareValue *)standardShareValue;
+
+@property(nonatomic,strong) TsUser *user;
+
+@property(nonatomic,assign) BOOL rememberPwd;
+
+@property(nonatomic,readwrite) NSString *save_userName;
+
+@property(nonatomic,readwrite) NSString *save_pwd;
 
 @end
