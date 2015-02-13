@@ -14,4 +14,14 @@
     // Initialization code
 }
 
+-(void)setImageName:(NSString *)imageName{
+    _imageName = imageName;
+    [self.imageView setImage:[UIImage imageNamed:imageName]];
+}
+
+-(void)setTitle:(NSString *)title{
+    _title = title;
+    [self.lable setText:title];
+}
+
 @end

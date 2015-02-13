@@ -9,12 +9,19 @@
 #import "ViewController.h"
 #import "ImagePlayerView.h"
 #import "UIImageView+WebCache.h"
+#import "MenuCell.h"
 
-@interface ViewController ()<ImagePlayerViewDelegate>
+#define MENUCELL_IDENTIFER @"MENUCELL_IDENTIFER"
+
+@interface ViewController ()<ImagePlayerViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet ImagePlayerView *imagePlayerView;
 
-@property (nonatomic, strong) NSArray *imageURLs;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
+@property (nonatomic, strong) NSMutableArray *advDatas;//广告
+
+@property (nonatomic, strong) NSMutableArray *menuDatas;//菜单
 
 @end
 
@@ -23,7 +30,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self loadDatas];
     [self loadImagePlayView];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"MenuCell" bundle:nil]  forCellWithReuseIdentifier:MENUCELL_IDENTIFER];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,11 +41,14 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)loadImagePlayView{
-    self.imageURLs = @[[NSURL URLWithString:@"http://sudasuta.com/wp-content/uploads/2013/10/10143181686_375e063f2c_z.jpg"],
-                       [NSURL URLWithString:@"http://www.yancheng.gov.cn/ztzl/zgycddhsdgy/xwdt/201109/W020110902584601289616.jpg"],
-                       [NSURL URLWithString:@"http://fzone.oushinet.com/bbs/data/attachment/forum/201208/15/074140zsb6ko6hfhzrb40q.jpg"]];
+-(void)loadDatas{
+    self.advDatas = [[NSMutableArray alloc]initWithObjects:@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},nil];
     
+    self.menuDatas = [[NSMutableArray alloc]initWithObjects:@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},nil];
+    
+}
+
+-(void)loadImagePlayView{
     self.imagePlayerView.imagePlayerViewDelegate = self;
     
     // set auto scroll interval to x seconds
@@ -55,7 +68,7 @@
 #pragma mark - ImagePlayerViewDelegate
 - (NSInteger)numberOfItems
 {
-    return self.imageURLs.count;
+    return self.advDatas.count;
 }
 
 - (void)imagePlayerView:(ImagePlayerView *)imagePlayerView loadImageForImageView:(UIImageView *)imageView index:(NSInteger)index
@@ -64,7 +77,8 @@
     //    [imageView setImageWithURL:[self.imageURLs objectAtIndex:index] placeholderImage:nil];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [imageView setImageWithURL:[self.imageURLs objectAtIndex:index] placeholderImage:nil];
+        NSDictionary *advDic = [self.advDatas objectAtIndex:index];
+        [imageView setImage:[UIImage imageNamed:[advDic objectForKey:@"imageName"]]];
     });
 }
 
@@ -73,5 +87,43 @@
     NSLog(@"did tap index = %d", (int)index);
 }
 
+
+#pragma mark - UICollectionViewDataSource
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section;
+{
+    return self.menuDatas.count; //
+}
+
+
+//每个UICollectionView展示的内容
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    //重用cell
+    MenuCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:MENUCELL_IDENTIFER forIndexPath:indexPath];
+    NSDictionary *dict = [self.menuDatas objectAtIndex:indexPath.row];
+    cell.imageName = [dict objectForKey:@"imageName"];
+    cell.title = [dict objectForKey:@"title"];
+    return cell;
+}
+
+#pragma mark --UICollectionViewDelegateFlowLayout
+//定义每个UICollectionViewCell 的大小
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGSize size = collectionView.frame.size;
+    CGFloat width = (size.width - 40)/4;
+    return CGSizeMake(width, width);
+}
+
+//定义每个UICollectionView 的 margin
+-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(5, 5, 15, 5);
+}
 
 @end

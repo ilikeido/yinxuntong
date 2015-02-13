@@ -8,6 +8,7 @@
 
 #import "NDBaseAPI.h"
 #import "Company.h"
+#import "CompanyFile.h"
 
 /**
  *  5.4.1	协议下一操作列表
@@ -135,6 +136,127 @@
 @property(nonatomic,strong)NSString *errorCode;//失败时的错误码{001：申请人不能为空，010:协议编码已经存在，020：提交银商审核异常，009：其他异常}
 
 @end
+
+/**
+ *  5.4.4	协议提交下一操作
+ */
+@interface CompanySubmitNextRequest : NDBaseAPIRequest
+
+@property(nonatomic,assign) int companyId;//唯一编号,修改时需填
+@property(nonatomic,assign) int stepId;//下一操作ID，提交审核时，需填
+@property(nonatomic,strong) NSNumber *operatorId;//下一办理人ID
+@property(nonatomic,strong) NSNumber *currentFlowStep;//当前步骤,新建时可为空
+
+@end
+
+@interface CompanySubmitNextResponse : NDBaseAPIResponse
+
+@property(nonatomic,strong) Company *company;
+
+@end
+
+
+/**
+ *  5.4.6	协议申请进度查询
+ */
+@interface AgreementOperHisRequest : NDBaseAPIRequest
+
+@property(nonatomic,assign) int agreementId;//协议编号
+
+@end
+
+@interface AgreementOperHisResponse : NDBaseAPIResponse
+
+@property(nonatomic,strong) NSArray *agreementOperHis;
+
+@end
+
+/**
+ *  5.4.7	协议图片列表
+ */
+@interface GetCompanyfileListRequest : NDBaseAPIRequest
+
+@property(nonatomic,assign) int companyId;//协议编号
+
+@end
+
+@interface GetCompanyfileListResponse : NDBaseAPIResponse
+
+@property(nonatomic,strong) NSArray * credentialTypes;//协议编号
+
+@end
+
+/**
+ *  5.4.8	协议删除
+ */
+@interface DelCompanyRequest : NDBaseAPIRequest
+
+@property(nonatomic,strong) NSString *companyIds;//协议编号
+
+@end
+
+@interface DelCompanyResponse : NDBaseAPIResponse
+
+@end
+
+/**
+ *  5.4.9	协议作废
+ */
+@interface CancelCompanyRequest : NDBaseAPIRequest
+
+@property(nonatomic,assign) int companyId;//协议编号
+
+@end
+
+@interface CancelCompanyResponse : NDBaseAPIResponse
+
+@end
+
+
+/**
+ *  5.4.10	协议资料上传
+ */
+@interface UpdateCompanyFileRequest : NDBaseAPIRequest
+
+@property(nonatomic,assign) NSString * jsonCompanyFile;//将CompanyFile对象转化为Json格式字符串。
+
+@end
+
+@interface UpdateCompanyFileResponse : NDBaseAPIResponse
+
+@property(nonatomic,strong) CompanyFile *companyFile;//上传后的资料信息，包括访问地址，文件名等
+
+@end
+
+/**
+ *  5.4.11	协议资料删除
+ */
+@interface DelCompanyFileRequest : NDBaseAPIRequest
+
+@property(nonatomic,strong) NSString *companyFileIds;//协议资料编号，多个用英文逗号分隔,如：1,2,3,4,5,6
+
+@end
+
+@interface DelCompanyFileResponse : NDBaseAPIResponse
+
+@end
+
+
+/**
+ *  5.4.12	协议详情
+ */
+@interface ShowCompanyRequest : NDBaseAPIRequest
+
+@property(nonatomic,assign) int companyId;
+
+@end
+
+@interface ShowCompanyResponse : NDBaseAPIResponse
+
+@property(nonatomic,strong) Company *company;//协议信息，company. sourceType = 1,说明协议是银联提交的，没有下一操作;如果有下一步操作，当前操作人ID为:company.currentOperatorId当前步骤ID为:company. currentFlowSteps
+
+@end
+
 
 @interface CompanyAPI : NDBaseAPI
 

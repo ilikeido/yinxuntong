@@ -10,6 +10,8 @@
 #import "Step.h"
 #import "TsUser.h"
 #import "Company.h"
+#import "AgreementOperateLog.h"
+#import "CredentialType.h"
 
 @implementation GetNextSetpListRequest
 
@@ -77,6 +79,65 @@
 
 
 @end
+
+@implementation CompanySubmitNextRequest
+
+-(NSString *)method{
+    return @"/company/submitNext";
+}
+
+@end
+
+@implementation CompanySubmitNextResponse
+
+@end
+
+@implementation AgreementOperHisRequest
+
+-(NSString *)method{
+    return @"/company/agreementOperHis";
+}
+
+@end
+
+@implementation AgreementOperHisResponse
+
++(Class)__agreementOperHisClass{
+    return [AgreementOperateLog class];
+}
+
+@end
+
+
+@implementation GetCompanyfileListRequest
+
+-(NSString *)method{
+    return @"/companyfile/list";
+}
+
+@end
+
+@implementation GetCompanyfileListResponse
+
++(Class)__credentialTypesClass{
+    return [CredentialType  class];
+}
+
+@end
+
+@implementation DelCompanyRequest
+
+-(NSString *)method{
+    return @"/company/delete";
+}
+
+@end
+
+@implementation DelCompanyResponse
+
+@end
+
+
 
 
 @implementation CompanyAPI
