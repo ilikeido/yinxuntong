@@ -38,7 +38,7 @@
 -(id)init{
     self = [super init];
     if (self) {
-        self.deviceNo = [FCUUID uuidForDevice];
+        self.deviceNo = @"188d87b1bbe34ca5a28bc7ff77e8a6f8";//[FCUUID uuidForDevice];
         self.deviceVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
         self.deviceType = 2;
     }
