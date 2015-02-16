@@ -7,10 +7,13 @@
 //
 
 #import "AppDelegate.h"
-#import "UserAPI.h"
 #import "ShareValue.h"
+#import "LoginVC.h"
+#import "IQKeyboardManager.h"
 
 @interface AppDelegate ()
+
+@property(nonatomic,strong) LoginVC *loginVC;
 
 @end
 
@@ -18,21 +21,18 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    self.loginVC = [[LoginVC alloc]init];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:self.loginVC];
+    nav.navigationBarHidden = YES;
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    PosLoginRequest *request = [[PosLoginRequest alloc]init];
-    if ([ShareValue standardShareValue].save_userName) {
-        request.phoneNum = [ShareValue standardShareValue].save_userName;
-    }
-    if ([ShareValue standardShareValue].save_pwd) {
-        request.password = [ShareValue standardShareValue].save_pwd;
-    }
-    request.phoneNum = @"developer";
-    request.password = @"developer";
-    [UserAPI posLoginByRequest:request completionBlockWithSuccess:^(PosLoginResponse *response) {
-        NSLog(@"%d",response.user.userId);
-    } Fail:^(NSString *returnCode, NSString *failDescript) {
-        
-    }];
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
+    
+    // Override point for customization after application launch.
+    
     return YES;
 }
 
