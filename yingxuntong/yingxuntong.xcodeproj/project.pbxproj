@@ -45,6 +45,8 @@
 		6D0780B01A8B3B750079FD13 /* UIImage+External.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0780981A8B3B750079FD13 /* UIImage+External.m */; };
 		6D0780B81A8B44E10079FD13 /* LK_NSDictionary2Object.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0780B71A8B44E10079FD13 /* LK_NSDictionary2Object.m */; };
 		6D0780BB1A8B45000079FD13 /* NDBaseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0780BA1A8B45000079FD13 /* NDBaseAPI.m */; };
+		6D0D7ED61A9DCFA800CCA522 /* StatisticAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0D7ED51A9DCFA800CCA522 /* StatisticAPI.m */; };
+		6D0D7ED71A9DCFA800CCA522 /* StatisticAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0D7ED51A9DCFA800CCA522 /* StatisticAPI.m */; };
 		6D7A36BC1A8C52A600D19E37 /* CompanyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7A36BB1A8C52A600D19E37 /* CompanyAPI.m */; };
 		6D7A36BD1A8C52A600D19E37 /* CompanyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7A36BB1A8C52A600D19E37 /* CompanyAPI.m */; };
 		6D7A36BE1A8C52AC00D19E37 /* DBAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB18D6F1A8BB3D9004DFAEB /* DBAPI.m */; };
@@ -193,6 +195,8 @@
 		6D0780B71A8B44E10079FD13 /* LK_NSDictionary2Object.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LK_NSDictionary2Object.m; sourceTree = "<group>"; };
 		6D0780B91A8B45000079FD13 /* NDBaseAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDBaseAPI.h; sourceTree = "<group>"; };
 		6D0780BA1A8B45000079FD13 /* NDBaseAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDBaseAPI.m; sourceTree = "<group>"; };
+		6D0D7ED41A9DCFA800CCA522 /* StatisticAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticAPI.h; sourceTree = "<group>"; };
+		6D0D7ED51A9DCFA800CCA522 /* StatisticAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatisticAPI.m; sourceTree = "<group>"; };
 		6D7A36BA1A8C52A600D19E37 /* CompanyAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyAPI.h; sourceTree = "<group>"; };
 		6D7A36BB1A8C52A600D19E37 /* CompanyAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyAPI.m; sourceTree = "<group>"; };
 		6DEB56DD1A8B5E550076E66E /* test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = test.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -480,6 +484,8 @@
 				DFB18D6F1A8BB3D9004DFAEB /* DBAPI.m */,
 				6D7A36BA1A8C52A600D19E37 /* CompanyAPI.h */,
 				6D7A36BB1A8C52A600D19E37 /* CompanyAPI.m */,
+				6D0D7ED41A9DCFA800CCA522 /* StatisticAPI.h */,
+				6D0D7ED51A9DCFA800CCA522 /* StatisticAPI.m */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -720,6 +726,7 @@
 				6D0780AD1A8B3B750079FD13 /* NSString+External.m in Sources */,
 				DF0AA8561A8CFFEB002BF7E5 /* Company.m in Sources */,
 				DF0AA85A1A8CFFEB002BF7E5 /* CompanyMchtTerminal.m in Sources */,
+				6D0D7ED61A9DCFA800CCA522 /* StatisticAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,6 +759,7 @@
 				6DEB57011A8B5EA60076E66E /* UIImageView+AFNetworking.m in Sources */,
 				6DEB56E81A8B5E990076E66E /* ServerConfig.h in Sources */,
 				6DEB56E91A8B5E990076E66E /* ShareValue.h in Sources */,
+				6D0D7ED71A9DCFA800CCA522 /* StatisticAPI.m in Sources */,
 				6DEB56EA1A8B5E990076E66E /* ShareValue.mm in Sources */,
 				6DEB56EB1A8B5E990076E66E /* NDBaseAPI.h in Sources */,
 				6DEB56EC1A8B5E990076E66E /* NDBaseAPI.m in Sources */,

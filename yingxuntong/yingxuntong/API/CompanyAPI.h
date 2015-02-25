@@ -257,6 +257,40 @@
 
 @end
 
+/**
+ *  5.4.13	协议跟踪反馈新增/修改
+ */
+@interface FeedbackUpdateRequest : NDBaseAPIRequest
+
+@property(nonatomic,strong) NSNumber *companyFeedbackId	;//	唯一编号,修改时需填
+@property(nonatomic,assign) int 	userId	;//	反馈人编号，新增时需填
+@property(nonatomic,assign) int 	companyId	;//	协议编号
+@property(nonatomic,strong) NSString *realName	;//	反馈人真实姓名
+@property(nonatomic,strong) NSString * 	content	;//	反馈内容
+@property(nonatomic,strong) NSString * 	feedbackType	;//	反馈类型, 来自字典（字典类型typeKey= COMPANY_FEEDBACK_TYP）
+
+@end
+
+@interface FeedbackUpdateResponse :NDBaseAPIResponse
+
+
+@end
+
+/**
+ *  5.4.14	协议跟踪反馈列表
+ */
+@interface FeedBackListRequest : NDBaseAPIRequest
+
+@property(nonatomic,strong) NSNumber *companyId	;//	协议编号
+
+@end
+
+@interface FeedBackListResponse : NDBaseAPIResponse
+
+@property(nonatomic,strong) NSArray *companyfeedbacks;//协议跟踪反馈列表
+
+@end
+
 
 @interface CompanyAPI : NDBaseAPI
 
@@ -289,6 +323,124 @@
  *
  */
 +(void)getCompanyPageByRequest:(CompanyPageRequest *)request completionBlockWithSuccess:(void(^)(CompanyPageResponse *response))sucess  Fail:(void(^)(NSString * returnCode,NSString *failDescript))fail;
+
+/**
+ *  协议申请/修改
+ *
+ *  @param request 请求对象
+ *  @param sucess 成功返回的Block
+ *  @param fail 失败返回的Block
+ *
+ */
++(void)updateCompanyByRequest:(CompanyUpdateRequest *)request completionBlockWithSuccess:(void(^)(CompanyUpdateResponse *response))sucess  Fail:(void(^)(NSString * returnCode,NSString *failDescript))fail;
+
+/**
+ *  协议提交下一操作
+ *
+ *  @param request 请求对象
+ *  @param sucess 成功返回的Block
+ *  @param fail 失败返回的Block
+ *
+ */
++(void)submitNextByRequest:(CompanySubmitNextRequest *)request completionBlockWithSuccess:(void(^)(CompanySubmitNextResponse *response))sucess  Fail:(void(^)(NSString * returnCode,NSString *failDescript))fail;
+
+
+/**
+ *  协议申请进度查询
+ *
+ *  @param request 请求对象
+ *  @param sucess 成功返回的Block
+ *  @param fail 失败返回的Block
+ *
+ */
++(void)queryAgreementOperHisByRequest:(AgreementOperHisRequest *)request completionBlockWithSuccess:(void(^)(AgreementOperHisResponse *response))sucess  Fail:(void(^)(NSString * returnCode,NSString *failDescript))fail;
+
+
+/**
+ *  协议图片列表
+ *
+ *  @param request 请求对象
+ *  @param sucess 成功返回的Block
+ *  @param fail 失败返回的Block
+ *
+ */
++(void)getCompanyfileListByRequest:(GetCompanyfileListRequest *)request completionBlockWithSuccess:(void(^)(GetCompanyfileListResponse *response))sucess  Fail:(void(^)(NSString * returnCode,NSString *failDescript))fail;
+
+/**
+ *  协议删除
+ *
+ *  @param request 请求对象
+ *  @param sucess 成功返回的Block
+ *  @param fail 失败返回的Block
+ *
+ */
++(void)delCompanyByRequest:(DelCompanyRequest *)request completionBlockWithSuccess:(void(^)(DelCompanyResponse *response))sucess  Fail:(void(^)(NSString * returnCode,NSString *failDescript))fail;
+
+/**
+ *  协议作废
+ *
+ *  @param request 请求对象
+ *  @param sucess 成功返回的Block
+ *  @param fail 失败返回的Block
+ *
+ */
++(void)cancelCompanyByRequest:(CancelCompanyRequest *)request completionBlockWithSuccess:(void(^)(CancelCompanyResponse *response))sucess  Fail:(void(^)(NSString * returnCode,NSString *failDescript))fail;
+
+
+/**
+ *  协议资料上传
+ *
+ *  @param request 请求对象
+ *  @param sucess 成功返回的Block
+ *  @param fail 失败返回的Block
+ *
+ */
++(void)updateCompanyFileByRequest:(UpdateCompanyFileRequest *)request completionBlockWithSuccess:(void(^)(UpdateCompanyFileResponse *response))sucess  Fail:(void(^)(NSString * returnCode,NSString *failDescript))fail;
+
+/**
+ *  协议资料删除
+ *
+ *  @param request 请求对象
+ *  @param sucess 成功返回的Block
+ *  @param fail 失败返回的Block
+ *
+ */
++(void)delCompanyFileByRequest:(DelCompanyFileRequest *)request completionBlockWithSuccess:(void(^)(DelCompanyFileResponse *response))sucess  Fail:(void(^)(NSString * returnCode,NSString *failDescript))fail;
+
+
+/**
+ *  协议详情
+ *
+ *  @param request 请求对象
+ *  @param sucess 成功返回的Block
+ *  @param fail 失败返回的Block
+ *
+ */
++(void)showCompanyByRequest:(ShowCompanyRequest *)request completionBlockWithSuccess:(void(^)(ShowCompanyResponse *response))sucess  Fail:(void(^)(NSString * returnCode,NSString *failDescript))fail;
+
+
+/**
+ *  协议跟踪反馈新增/修改
+ *
+ *  @param request 请求对象
+ *  @param sucess 成功返回的Block
+ *  @param fail 失败返回的Block
+ *
+ */
++(void)feedbackUpdateByRequest:(FeedbackUpdateRequest *)request completionBlockWithSuccess:(void(^)(FeedbackUpdateResponse *response))sucess  Fail:(void(^)(NSString * returnCode,NSString *failDescript))fail;
+
+
+/**
+ *  协议跟踪反馈列表
+ *
+ *  @param request 请求对象
+ *  @param sucess 成功返回的Block
+ *  @param fail 失败返回的Block
+ *
+ */
++(void)getFeedBackListByRequest:(FeedBackListRequest *)request completionBlockWithSuccess:(void(^)(FeedBackListResponse *response))sucess  Fail:(void(^)(NSString * returnCode,NSString *failDescript))fail;
+
+
 
 
 @end
