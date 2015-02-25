@@ -44,7 +44,7 @@
 -(void)loadDatas{
     self.advDatas = [[NSMutableArray alloc]initWithObjects:@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},nil];
     
-    self.menuDatas = [[NSMutableArray alloc]initWithObjects:@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},nil];
+    self.menuDatas = [[NSMutableArray alloc]initWithObjects:@{@"imageName":@"商户管理_icon",@"title":@"商户管理"},@{@"imageName":@"业务管理_icon_nor",@"title":@"业务办理"},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},@{@"imageName":@"",@"title":@""},nil];
     
 }
 
