@@ -76,6 +76,20 @@
 
 @end
 
+/**
+ *  个人中心意见反馈请求
+ */
+@implementation PersonFeedBackAddRequest : NDBaseAPIRequest
+
+@end
+
+/**
+ *  个人中心意见反馈返回
+ */
+@implementation PersonFeedBackAddResponse : NDBaseAPIResponse
+
+@end
+
 
 @implementation SystemAPI
 
@@ -139,6 +153,22 @@
 +(void)bindPushByRequest:(PushBindRequest *)request completionBlockWithSuccess:(void(^)(PushBindResponse *response))sucess  Fail:(void(^)(NSString * returnCode,NSString *failDescript))fail{
     [self request:request responseClass:[PushBindResponse class] completionBlockWithSuccess:^(NDBaseAPIResponse *response) {
         sucess((PushBindResponse *)response);
+    } Fail:^(NSString *returnCode, NSString *failDescript) {
+        fail(returnCode,failDescript);
+    }];
+}
+
+/**
+ *  个人中心意见反馈
+ *
+ *  @param request 请求对象
+ *  @param sucess 成功返回的Block
+ *  @param fail 失败返回的Block
+ *
+ */
++(void)addByPersonFeedBackRequest:(PersonFeedBackAddRequest *)request completionBlockWithSuccess:(void(^)(PersonFeedBackAddResponse *response))sucess  Fail:(void(^)(NSString * returnCode,NSString *failDescript))fail{
+    [self request:request responseClass:[PersonFeedBackAddResponse class] completionBlockWithSuccess:^(NDBaseAPIResponse *response) {
+        sucess((PersonFeedBackAddResponse *)response);
     } Fail:^(NSString *returnCode, NSString *failDescript) {
         fail(returnCode,failDescript);
     }];

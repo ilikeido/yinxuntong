@@ -83,6 +83,29 @@
 
 @end
 
+/**
+ *  个人中心意见反馈请求
+ */
+@interface PersonFeedBackAddRequest : NDBaseAPIRequest
+
+@property(nonatomic,strong) NSString *	userId	;//	用户编号
+@property(nonatomic,strong) NSString *	memberId	;//	成员编号
+@property(nonatomic,strong) NSString *	realName	;//	用户真实姓名
+@property(nonatomic,strong) NSString *	content	;//
+@property(nonatomic,strong) NSString *	imsi	;//
+@property(nonatomic,strong) NSString *	imei	;//
+@property(nonatomic,strong) NSString *	clientVersion	;//
+@property(nonatomic,strong) NSString *	clientType	;//
+
+@end
+
+/**
+ *  个人中心意见反馈返回
+ */
+@interface PersonFeedBackAddResponse : NDBaseAPIResponse
+
+@end
+
 @interface SystemAPI : NDBaseAPI
 
 /**
@@ -126,5 +149,15 @@
  */
 +(void)bindPushByRequest:(PushBindRequest *)request completionBlockWithSuccess:(void(^)(PushBindResponse *response))sucess  Fail:(void(^)(NSString * returnCode,NSString *failDescript))fail;
 
+
+/**
+ *  个人中心意见反馈
+ *
+ *  @param request 请求对象
+ *  @param sucess 成功返回的Block
+ *  @param fail 失败返回的Block
+ *
+ */
++(void)addByPersonFeedBackRequest:(PersonFeedBackAddRequest *)request completionBlockWithSuccess:(void(^)(PersonFeedBackAddResponse *response))sucess  Fail:(void(^)(NSString * returnCode,NSString *failDescript))fail;
 
 @end
