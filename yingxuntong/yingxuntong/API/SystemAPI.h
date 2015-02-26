@@ -63,6 +63,26 @@
 
 @end
 
+/**
+ *  消息推送绑定请求
+ */
+@interface PushBindRequest : NDBaseAPIRequest
+
+@property(nonatomic,strong) NSString *	userId	;//	用户编号
+@property(nonatomic,strong) NSString *	userType	;//	用户类型{1:机构登录用户，2：商户登录用户}
+@property(nonatomic,strong) NSString *	bindUserId	;//	绑定后的userId
+@property(nonatomic,strong) NSString *	bindChannelId	;//	绑定后的channelId
+@property(nonatomic,strong) NSString *	clientType	;//	终端类型{1:android,2:ios}
+
+@end
+
+/**
+ *  消息推送绑定返回
+ */
+@interface PushBindResponse : NDBaseAPIResponse
+
+@end
+
 @interface SystemAPI : NDBaseAPI
 
 /**
@@ -96,7 +116,15 @@
  */
 +(void)getDataItemsByRequest:(GetDataItemRequest *)request completionBlockWithSuccess:(void(^)(GetDataItemResponse *response))sucess  Fail:(void(^)(NSString * returnCode,NSString *failDescript))fail;
 
-
+/**
+ *  消息推送绑定
+ *
+ *  @param request 请求对象
+ *  @param sucess 成功返回的Block
+ *  @param fail 失败返回的Block
+ *
+ */
++(void)bindPushByRequest:(PushBindRequest *)request completionBlockWithSuccess:(void(^)(PushBindResponse *response))sucess  Fail:(void(^)(NSString * returnCode,NSString *failDescript))fail;
 
 
 @end

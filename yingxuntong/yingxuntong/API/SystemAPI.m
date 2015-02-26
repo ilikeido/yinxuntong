@@ -57,6 +57,25 @@
 
 @end
 
+/**
+ *  消息推送绑定请求
+ */
+@implementation PushBindRequest
+
+-(NSString *)method{
+    return @"/bindpush/update";
+}
+
+@end
+
+
+/**
+ *  消息推送绑定返回
+ */
+@implementation PushBindResponse
+
+@end
+
 
 @implementation SystemAPI
 
@@ -109,6 +128,20 @@
 }
 
 
-
+/**
+ *  消息推送绑定
+ *
+ *  @param request 请求对象
+ *  @param sucess 成功返回的Block
+ *  @param fail 失败返回的Block
+ *
+ */
++(void)bindPushByRequest:(PushBindRequest *)request completionBlockWithSuccess:(void(^)(PushBindResponse *response))sucess  Fail:(void(^)(NSString * returnCode,NSString *failDescript))fail{
+    [self request:request responseClass:[PushBindResponse class] completionBlockWithSuccess:^(NDBaseAPIResponse *response) {
+        sucess((PushBindResponse *)response);
+    } Fail:^(NSString *returnCode, NSString *failDescript) {
+        fail(returnCode,failDescript);
+    }];
+}
 
 @end

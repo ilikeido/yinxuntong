@@ -44,6 +44,7 @@
 		6D0780B01A8B3B750079FD13 /* UIImage+External.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0780981A8B3B750079FD13 /* UIImage+External.m */; };
 		6D0780B81A8B44E10079FD13 /* LK_NSDictionary2Object.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0780B71A8B44E10079FD13 /* LK_NSDictionary2Object.m */; };
 		6D0780BB1A8B45000079FD13 /* NDBaseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0780BA1A8B45000079FD13 /* NDBaseAPI.m */; };
+		6D08EF601A9F21320061B6EB /* CompanyMchtAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D08EF5F1A9F21320061B6EB /* CompanyMchtAPI.m */; };
 		6D0D7ED61A9DCFA800CCA522 /* StatisticAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0D7ED51A9DCFA800CCA522 /* StatisticAPI.m */; };
 		6D0D7ED71A9DCFA800CCA522 /* StatisticAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0D7ED51A9DCFA800CCA522 /* StatisticAPI.m */; };
 		6D7A36BC1A8C52A600D19E37 /* CompanyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7A36BB1A8C52A600D19E37 /* CompanyAPI.m */; };
@@ -211,6 +212,8 @@
 		6D0780B71A8B44E10079FD13 /* LK_NSDictionary2Object.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LK_NSDictionary2Object.m; sourceTree = "<group>"; };
 		6D0780B91A8B45000079FD13 /* NDBaseAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDBaseAPI.h; sourceTree = "<group>"; };
 		6D0780BA1A8B45000079FD13 /* NDBaseAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDBaseAPI.m; sourceTree = "<group>"; };
+		6D08EF5E1A9F21320061B6EB /* CompanyMchtAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyMchtAPI.h; sourceTree = "<group>"; };
+		6D08EF5F1A9F21320061B6EB /* CompanyMchtAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyMchtAPI.m; sourceTree = "<group>"; };
 		6D0D7ED41A9DCFA800CCA522 /* StatisticAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticAPI.h; sourceTree = "<group>"; };
 		6D0D7ED51A9DCFA800CCA522 /* StatisticAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatisticAPI.m; sourceTree = "<group>"; };
 		6D7A36BA1A8C52A600D19E37 /* CompanyAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyAPI.h; sourceTree = "<group>"; };
@@ -541,6 +544,8 @@
 				6D7A36BB1A8C52A600D19E37 /* CompanyAPI.m */,
 				6D0D7ED41A9DCFA800CCA522 /* StatisticAPI.h */,
 				6D0D7ED51A9DCFA800CCA522 /* StatisticAPI.m */,
+				6D08EF5E1A9F21320061B6EB /* CompanyMchtAPI.h */,
+				6D08EF5F1A9F21320061B6EB /* CompanyMchtAPI.m */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -864,6 +869,7 @@
 				DF0AA8581A8CFFEB002BF7E5 /* CompanyFile.m in Sources */,
 				6D0780641A8B3B300079FD13 /* UIImage+MultiFormat.m in Sources */,
 				6D0780591A8B3B300079FD13 /* UIImageView+AFNetworking.m in Sources */,
+				6D08EF601A9F21320061B6EB /* CompanyMchtAPI.m in Sources */,
 				6D0780551A8B3B300079FD13 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				DF0AA8601A8CFFEB002BF7E5 /* SqlitDB.m in Sources */,
 				6D0780BB1A8B45000079FD13 /* NDBaseAPI.m in Sources */,
